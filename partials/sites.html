@@ -1,0 +1,38 @@
+<div class="alert alert-warning" ng-hide="sites.length > 0">
+    You do not have yet any site created. Please <a href="#/app/site">create the new site</a>.
+</div>
+
+<div ng-show="sites.length > 0">
+    <div class="clearfix">
+        <div class="pull-left">
+            <button class="btn btn-default">Edit</button>
+            <button class="btn btn-default">Preview</button>
+            <button class="btn btn-default"><i class="fa fa-cogs"></i> Build</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-primary" tooltip="sdfs" tooltip-placement="right">Add site</button>
+        </div>
+    </div>
+    <br/>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th width="1px">#</th>
+            <th width="1px"><input type="checkbox"/></th>
+            <th>Site name</th>
+            <th>Created</th>
+            <th width="1%">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="site in sites">
+            <td>{{site.id}}</td>
+            <th width="1px"><input type="checkbox"/></th>
+            <td>{{site.name}} [{{site.domain}}]</td>
+            <td></td>
+            <td><i class="fa" ng-class="{'fa-check-square-o': site.status, 'fa-close': !site.status}"></i></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

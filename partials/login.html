@@ -1,0 +1,35 @@
+<br/>
+<br/>
+<br/>
+<form action="" ng-submit="login(form)">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-4">
+            <h1>Sagra account</h1>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">User name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" required ng-model="form.name"
+                       placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" ng-model="form.pass"
+                       placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Login</button>
+        </div>
+        <div class="col-md-4">
+            <h1>Social providers</h1>
+
+            <p class="small">If you have the same confirmed email in your Sagra account, social account will be
+                automatically bonded to your Sagra account</p>
+
+            <button class="btn btn-block" ng-click="form.name = 'Facebook'">Facebook</button>
+            <button class="btn btn-block" ng-click="form.name = 'Twitter'">Twitter</button>
+            <button class="btn btn-block" ng-click="form.name = 'Google+'">Google+</button>
+        </div>
+    </div>
+</form>
+<br/>
+<br/>
+<br/>

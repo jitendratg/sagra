@@ -2,19 +2,25 @@
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
-	<title>Sagra Protoype</title>
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.css"/>
+	<title>Sagra Website</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="assets/vendors/bootstrap/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.css"/>
+
+	<link rel="stylesheet" href="assets/css/style.css"/>
+
 </head>
-<body>
-<div class="container">
-	<div class="page-header">
-		<h1>Prototype</h1>
-	</div>
+<body ng-app="sagra">
 
-</div>
+<section ui-view></section>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/vendors/angular/angular.min.js"></script>
+<script src="assets/vendors/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="assets/vendors/angular-animate/angular-animate.min.js"></script>
+<script src="assets/vendors/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="assets/vendors/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js"></script>
+
+<script src="assets/js/app.js"></script>
+
 </body>
 </html>

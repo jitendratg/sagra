@@ -1,1 +1,14 @@
 .idea/
+
+#assets/vendors/*
+
+!assets/vendors/jquery/dist/jquery.min.js
+!assets/vendors/angular/angular.min.js
+!assets/vendors/angular-sanitize/angular-sanitize.min.js
+!assets/vendors/angular-animate/angular-animate.min.js
+!assets/vendors/angular-ui-router/release/angular-ui-router.min.js
+!assets/vendors/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js
+!assets/vendors/angular-ui-bootstrap-bower/ui-bootstrap.min.js
+!assets/vendors/bootstrap/dist/css/bootstrap.min.css
+!assets/vendors/font-awesome/css/font-awesome.css
+!assets/vendors/font-awesome/fonts/**
