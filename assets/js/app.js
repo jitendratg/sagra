@@ -1,24 +1,4 @@
-var app = angular.module('sagra', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'ngAnimate']);
-
-app
-	.value('Sites', [
-		{
-			id:1,
-			name: 'My first site',
-			domain: 'example.com',
-			status: 1
-		}
-	])
-	.factory('User', function() {
-		return {
-			id: 0,
-			name: '',
-			clean: function() {
-				this.id = 0;
-				this.name = '';
-			}
-		}
-	})
+angular.module('sagra', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'ngAnimate'])
 	.config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider
@@ -29,30 +9,22 @@ app
 				url: "/app",
 				abstract: true,
 				templateUrl: 'partials/container.html',
-				controller: function($scope, User) {
-					$scope.user = User;
-				}
+				controller: 'mainCtrl'
 			})
 			.state('app.login', {
 				url: '/login',
 				templateUrl: 'partials/login.html',
-				controller: function($scope, $state, User) {
-					User.clean();
-					$scope.form = [];
-
-					$scope.login = function(form) {
-						User.id = 10;
-						User.name = form.name || 'not entered';
-						$state.go('app.sites');
-					};
-				}
+				controller: 'loginCtrl'
 			})
 			.state('app.sites', {
 				url: '/sites',
 				templateUrl: 'partials/sites.html',
-				controller: function($scope, Sites) {
-					$scope.sites = Sites;
-				}
+				controller: 'sitesCtrl'
+			})
+			.state('app.site', {
+				url: '/site/:id',
+				templateUrl: 'partials/site.html',
+				controller: 'siteCtrl'
 			});
 	})
 	.run(function() {
