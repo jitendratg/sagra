@@ -7,13 +7,4 @@ angular.module('sagra')
 			status: 1
 		}
 	])
-	.factory('User', function() {
-		return {
-			id: 0,
-			name: '',
-			clean: function() {
-				this.id = 0;
-				this.name = '';
-			}
-		}
-	});
+	.value('User', {id: '0'});

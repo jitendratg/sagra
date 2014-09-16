@@ -21,16 +21,26 @@ angular.module('sagra')
 			Sites.splice(id);
 		}
 	})
-	.controller('mainCtrl', function($scope, User) {
+	.controller('mainCtrl', function($scope, $state, User, $log) {
 		$scope.user = User;
+
+		$scope.logout = function(){
+			$scope.user =  {id: '0'};
+		}
+
+		$scope.$watch('user', function(newValue, oldValue) {
+			$log.info(newValue);
+			if(newValue.id == '0') {
+				$state.go('app.login');
+			}
+		});
 	})
 	.controller('loginCtrl', function($scope, $state, User) {
-		User.clean();
+
 		$scope.form = [];
 
 		$scope.login = function(form) {
-			User.id = 10;
-			User.name = form.name || 'not entered';
+			User.id = form.name || 'not entered';
 			$state.go('app.sites');
 		};
 	});

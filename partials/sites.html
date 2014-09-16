@@ -29,10 +29,14 @@
                         <i class="fa fa-cog"></i>
                     </button>
                     <ul class="dropdown-menu" role="menu">
+                        <li><a ng-click="site.status = !site.status">
+                            <i class="fa" ng-class="{'fa-stop': site.status, 'fa-play': !site.status}"></i>
+                            {{site.status ? 'Stop' : 'Start'}}
+                        </a></li>
+                        <li class="divider"></li>
                         <li><a href="#/app/site/{{$index}}">Edit</a></li>
-                        <li><a href="#">Stop</a></li>
-                        <li><a href="#">Builder</a></li>
-                        <li><a href="#">Preview</a></li>
+                        <li><a href="builder.html">Builder</a></li>
+                        <li><a href="preview.html">Preview</a></li>
                         <li class="divider"></li>
                         <li><a href="" ng-click="delete($index)"><i class="fa fa-trash-o"></i> Delete</a></li>
                     </ul>
