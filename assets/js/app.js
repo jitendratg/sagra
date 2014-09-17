@@ -25,6 +25,11 @@ angular.module('sagra', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'ngAnimate']
 				url: '/site/:id',
 				templateUrl: 'partials/site.html',
 				controller: 'siteCtrl'
+			})
+			.state('app.manage', {
+				url: '/manage/:id',
+				templateUrl: 'partials/manage.html',
+				controller: 'manageCtrl'
 			});
 	})
 	.run(function() {

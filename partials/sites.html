@@ -17,6 +17,8 @@
             <th width="1px"></th>
             <th>Site name</th>
             <th>Created</th>
+            <th width="1%">Version</th>
+            <th width="1%">Latest</th>
             <th width="1%">Status</th>
         </tr>
         </thead>
@@ -35,6 +37,7 @@
                         </a></li>
                         <li class="divider"></li>
                         <li><a href="#/app/site/{{$index}}">Edit</a></li>
+                        <li><a href="#/app/manage/{{$index}}">Manage</a></li>
                         <li><a href="builder.html">Builder</a></li>
                         <li><a href="preview.html">Preview</a></li>
                         <li class="divider"></li>
@@ -43,10 +46,16 @@
                 </div>
             </th>
             <td>
-                {{site.name}}<br/>
+                <a href="#/app/manage/{{$index}}">{{site.name}}</a><br/>
                 <small>{{site.domain}}</small>
             </td>
             <td></td>
+            <td>{{site.version}}</td>
+            <td nowrap>
+				<i ng-show="site.version == '1.0.3'" class="fa fa-check-square" tooltip="Up to date!"></i>
+				<a ng-show="site.version != '1.0.3'" href=""><i class="fa fa-download" tooltip="Update to latest version"></i></a>
+				1.0.3
+			</td>
             <td><i class="fa" ng-class="{'fa-check-square-o': site.status, 'fa-close': !site.status}"></i></td>
         </tr>
         </tbody>

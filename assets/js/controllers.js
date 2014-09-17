@@ -5,6 +5,9 @@ angular.module('sagra')
 			if(!valid) {
 				return;
 			}
+
+			$scope.site.version = '1.0.3';
+
 			if($stateParams.id.length) {
 				Sites[$stateParams.id] = $scope.site;
 			} else {
@@ -31,9 +34,16 @@ angular.module('sagra')
 		$scope.$watch('user', function(newValue, oldValue) {
 			$log.info(newValue);
 			if(newValue.id == '0') {
-				$state.go('app.login');
+				//$state.go('app.login');
 			}
 		});
+	})
+	.controller('manageCtrl', function($scope, $state, $stateParams, Sites) {
+		if(!angular.isDefined($stateParams.id) && $stateParams.id.length > 0) {
+			$state.go('app.sites');
+		}
+
+		$scope.site = Sites[$stateParams.id];
 	})
 	.controller('loginCtrl', function($scope, $state, User) {
 

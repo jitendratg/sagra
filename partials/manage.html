@@ -1,0 +1,62 @@
+<div class="page-header">
+	<h1>
+		<i class="fa fa-chevron-left" ui-sref="app.sites" tooltip="Back to list of the sites"></i>
+		Site: {{site.name}}
+	</h1>
+</div>
+<div class="row">
+	<div class="col-md-8">
+		<dl class="dl-horizontal">
+			<dt>Domain:</dt>
+			<dd>{{site.domain}}</dd>
+			<dt>Version:</dt>
+			<dd>{{site.version}}</dd>
+			<dt>Status:</dt>
+			<dd>{{site.status}}</dd>
+		</dl>
+
+		<h3>Generate mobile apps</h3>
+
+		<div class="row">
+			<div class="col-md-3">
+				<button class="btn btn-sm" tooltip="Set splash screen, icons, name and so on.">Configure</button>
+				<br/>
+				<i class="fa fa-apple"></i>
+				iOS
+			</div>
+			<div class="col-md-3">
+				<button class="btn btn-sm" tooltip="Set splash screen, icons, name and so on.">Configure</button>
+				<br/>
+				<i class="fa fa-android"></i>
+				Android
+			</div>
+			<div class="col-md-3">
+				<button class="btn btn-sm" tooltip="Set splash screen, icons, name and so on.">Configure</button>
+				<br/>
+				<i class="fa fa-"></i>
+				Blackberry
+			</div>
+			<div class="col-md-3">
+				<button class="btn btn-sm" tooltip="Set splash screen, icons, name and so on.">Configure</button>
+				<br/>
+				<i class="fa fa-windows"></i>
+				WP8
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<ul>
+			<li>Update Subscription</li>
+			<li>Edit</li>
+			<li>Builder</li>
+			<li>Preview</li>
+			<li>Update to latest version</li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<button class="btn btn-block btn-danger">Delete Site</button>
+	</div>
+</div>
+<br/>
+<br/>
